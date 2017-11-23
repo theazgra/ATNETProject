@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySteamService", "MyWebService\MySteamService.csproj", "{E763803B-3FAA-4EF3-8B38-0D838C5D3F92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySteamService", "MySteamService\MySteamService.csproj", "{E763803B-3FAA-4EF3-8B38-0D838C5D3F92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensibleApp", "ExtensibleApp\ExtensibleApp.csproj", "{899DC043-1509-4F9A-A204-3C40576F3A9A}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveExtension", "SaveExtens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{45A4C90A-3527-41AD-9A87-4C23D9E7A439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleExtension", "RectengleExtension\RectangleExtension.csproj", "{0ED00D45-A26D-40BF-8A47-7EA41AE73BF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleExtension", "RectangleExtension\RectangleExtension.csproj", "{0ED00D45-A26D-40BF-8A47-7EA41AE73BF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

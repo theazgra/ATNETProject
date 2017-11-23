@@ -8,6 +8,11 @@ namespace MyWebService
 {
     class ChartMaker
     {
+        /// <summary>
+        /// Generates chart based on downloaded data.
+        /// </summary>
+        /// <param name="dataFile">File containing data.</param>
+        /// <returns>Path to chart image.</returns>
         public static string CreateChart(string dataFile)
         {
             Dictionary<string, int> data = new Dictionary<string, int>();

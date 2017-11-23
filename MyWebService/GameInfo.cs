@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyWebService
+﻿namespace MyWebService
 {
+    /// <summary>
+    /// Simple POCO class containing info about a game.
+    /// </summary>
     class GameInfo
     {
         public int PlayerCount { get; private set; }

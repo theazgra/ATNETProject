@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ATNETProject")]
+[assembly: AssemblyTitle("ExtensibleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ATNETProject")]
+[assembly: AssemblyProduct("ExtensibleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a9a145cc-3629-44e3-a8be-aa0a819164f0")]
+[assembly: Guid("899dc043-1509-4f9a-a204-3c40576f3a9a")]
 
 // Version information for an assembly consists of the following four values:
 //

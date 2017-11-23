@@ -5,6 +5,12 @@ namespace MyWebService
 {
     class DataParser
     {
+        /// <summary>
+        /// Parse data based on format.
+        /// </summary>
+        /// <param name="data">Data string.</param>
+        /// <param name="format">Format of response.</param>
+        /// <returns>Game info or null when received data are not valid.</returns>
         public static GameInfo ParseData(string data, Format format)
         {
             switch (format)
@@ -17,7 +23,11 @@ namespace MyWebService
             return null;
         }
 
-
+        /// <summary>
+        /// Parse JSON string into game info.
+        /// </summary>
+        /// <param name="data">Json string.</param>
+        /// <returns>Game info or null when data are wrong.</returns>
         private static GameInfo ParseJSON(string data)
         {
             JObject jsonData = JObject.Parse(data);
@@ -39,6 +49,11 @@ namespace MyWebService
             return null;
         }
 
+        /// <summary>
+        /// Parse XML string into game info.
+        /// </summary>
+        /// <param name="data">XML string.</param>
+        /// <returns>Game info or null when data are wrong.</returns>
         private static GameInfo ParseXML(string data)
         {
             XmlDocument xml = new XmlDocument();

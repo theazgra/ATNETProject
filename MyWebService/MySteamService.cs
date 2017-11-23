@@ -32,6 +32,10 @@ namespace MyWebService
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initialize service.
+        /// </summary>
+        /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
@@ -47,6 +51,11 @@ namespace MyWebService
 
         }
 
+        /// <summary>
+        /// When timer elapsed event occurs. Data are downloaded and after some period also sent to email.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             if (dataDownloader == null)
@@ -64,6 +73,9 @@ namespace MyWebService
             }
         }
 
+        /// <summary>
+        /// This will load settings from the SteamServiceSettings.xml file, located in the same directory asi exe file.
+        /// </summary>
         private void LoadSettings()
         {
             XmlDocument xml = new XmlDocument();
@@ -111,7 +123,9 @@ namespace MyWebService
 
 
 
-
+        /// <summary>
+        /// Send email with chart to destination email address configured in the configuration file.
+        /// </summary>
         private void SendStatistics()
         {
             string graphFile = ChartMaker.CreateChart(logFile);
@@ -129,23 +143,23 @@ namespace MyWebService
                     using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
                     {
                         smtpClient.Credentials = new NetworkCredential(emailSource, emailPassword);
-                        //smtpClient.SendAsync(email, null);
                         smtpClient.Send(email);
                     }
                 }
-                
+
             }
-            catch (Exception e)
-            { 
-            }
+            ///Handle timeouts or bad configuration.
+            catch (Exception)
+            { }
         }
 
+        /// <summary>
+        /// Send email when service is stopped.
+        /// </summary>
         protected override void OnStop()
         {
             timer.Stop();
             SendStatistics();
         }
-
-
     }
 }

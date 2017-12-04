@@ -5,6 +5,7 @@ using System.IO;
 using System.Xml;
 using System.Net.Mail;
 using System.Net;
+using System.Threading;
 
 namespace MyWebService
 {
@@ -16,7 +17,7 @@ namespace MyWebService
         private Format format = Format.XML;
         private int interval = 1;
 
-        private Timer timer;
+        private System.Timers.Timer timer;
         private DataDownloader dataDownloader;
 
         int counter = 0;
@@ -44,7 +45,7 @@ namespace MyWebService
                 File.Delete(logFile);
 
 
-            timer = new Timer(interval * 60 * 1000);
+            timer = new System.Timers.Timer(interval * 60 * 1000);
             timer.Elapsed += TimerElapsed;
             timer.AutoReset = true;
             timer.Start();
@@ -127,6 +128,16 @@ namespace MyWebService
         /// Send email with chart to destination email address configured in the configuration file.
         /// </summary>
         private void SendStatistics()
+        {
+            Thread bgThread = new Thread(SendEmailInThread)
+            {
+                IsBackground = true
+            };
+            bgThread.Start();
+            
+        }
+
+        private void SendEmailInThread()
         {
             string graphFile = ChartMaker.CreateChart(logFile);
 
